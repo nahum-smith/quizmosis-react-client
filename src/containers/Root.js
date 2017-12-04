@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './Root.css'
 import Button from 'material-ui/Button'
+import gql from 'graphql-tag'
+import { graphql } from 'react-apollo'
 
 class Root extends Component {
   render () {
@@ -20,5 +22,13 @@ class Root extends Component {
     )
   }
 }
+const QUERY = gql`
+{
+  questions {
+    questionID
+    text
+    answer
+  }
+}`
 
-export default Root
+export default graphql(QUERY)(Root)
