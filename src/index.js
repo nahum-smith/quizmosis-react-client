@@ -20,19 +20,19 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
-client.query({
-  query: gql`{
-          users {
-            userID
-            email
-            password
-            ani
-            status
-            createdAt
-            updatedAt
-          } }` })
-.then(data => console.log(data.data.users[0]))
-.catch(console.log)
+// client.query({
+//   query: gql`{
+//           users {
+//             userID
+//             email
+//             password
+//             ani
+//             status
+//             createdAt
+//             updatedAt
+//           } }` })
+// .then(data => console.log(data.data.users[0]))
+// .catch(console.log)
 
 const configuredStore = configureStore()
 
